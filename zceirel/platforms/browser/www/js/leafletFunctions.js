@@ -6,10 +6,10 @@ var mymap;
 
 function addPointLinePoly() {
 	//add a point
-	L.marker([60.5,-0.09]).addTo(mymap);
+	L.marker([50.93,-6.29]).addTo(mymap);
 
 	//add a circle
-	L.circle([51.5,-0.09],5000, {
+	L.circle([51.5,-0.09],50000, {
 		color:'red',
 		fillColor:'#f03',
 		fillOpacity: 0.5
