@@ -5,28 +5,29 @@ var mymap;
 
 
 function addPointLinePoly() {
-	// Add a point
-	L.marker([51.5,-0.09]).addTo(mymap)	
+	//add a point
+	L.marker([60.5,-0.09]).addTo(mymap);
 
-	// Add a Line
+	//add a circle
+	L.circle([51.5,-0.09],5000, {
+		color:'red',
+		fillColor:'#f03',
+		fillOpacity: 0.5
+		}).addTo(mymap);
+
+
+	//add a polygon with 3 end points (i.e. a triangle)
 	var myLine = L.polygon([
-			[51.509,-0.08],
-			[51.503,-0.06]
+		[55.7,-21.81],
+		[58.51,13.32]
 		],{
 
-			color:'red',
-			fillColor:'#f03',
-			fillOpacity: '0.5'
+		color:'red',
+		fillColor:'#f06',
+		fillOpacity: '0.5'
 
-		}).addTo(mymap)
+		}).addTo(mymap);
 
-	// Add a Circle
-		L.circle([51.5,-0.09],500, {
-			color:'red',
-			fillColor:'#f03',
-			fillOpacity: 0.5
-
-		}).addTo(mymap)
 }
 
 // Retrieve the Earthquake data layer 
