@@ -56,8 +56,34 @@
       z-index: 900;
     }
     </style>
+
+    <!-- the following CSS files are used to include custom icons from AwesomeMarkers -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
+    integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+    integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+
+    crossorigin=""></script>
+
+    <!--the following CSS is used to set the size of the Map -->
+    <style type="text/css">
+    #mapid {height: 500px;}
+    </style>
+
+    <link rel="stylesheet" href="ionicons.min.css">
+    <link rel="stylesheet" href="leaflet.awesome-markers.css">
+  
+
+    <!--the following links add the CSS and Javascript required for the Leaflet Map -->
+  <script src="leaflet.awesome-markers.js"></script>
+
   </head>
+
   <body>
+
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -77,7 +103,7 @@
           </button>
           <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right" for="hdrbtn">
             <li class="mdl-menu__item"> <a href="simpleMapGeoJSON.html"> About</a></li>
-            <li class="mdl-menu__item" onclick="addUCLLogo ()">Contact</li>
+            <li class="mdl-menu__item" onclick="addUCLLogo()">Contact</li>
             <li class="mdl-menu__item" onclick="menuClicked()">Div change</li>
           </ul>
         </div>
@@ -117,14 +143,20 @@
         </nav>
       </div>
       <main class="mdl-layout__content mdl-color--grey-100">
+
+        <!-- mapid div holds the map -->
+        <div id="mapid" style="width: 600px; height: 400px;"></div>
+        
         <div class="mdl-grid demo-content">
             <div class="demo-separator mdl-cell--1-col"></div>
             <div id="ucllogo"name="ucllogo"> div goes here </div>
-          </div>
+         </div>
         </div>
       </main>
     </div>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="js/rhMenu.js"></script>
+    <script src="js/leaflet.js"></script>
   </body>
+
 </html>
