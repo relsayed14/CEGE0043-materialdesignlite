@@ -16,7 +16,7 @@ function addPointLinePoly() {
 		}).addTo(mymap);
 
 
-	//add a polygon with 3 end points (i.e. a triangle)
+	//add a polygon with 2 end points (i.e. a line)
 	var myLine = L.polygon([
 		[55.7,-21.81],
 		[58.51,13.32]
