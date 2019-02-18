@@ -1,0 +1,6 @@
+function trackAndCircle() {
+
+	trackLocation();
+	addPointLinePoly();
+	
+}
