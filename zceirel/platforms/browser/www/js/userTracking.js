@@ -11,6 +11,7 @@ function trackLocation() {
 var userMarker;
 // code to feed location onto map
 function showPosition(position) {
+	getDistance();
 	// check if marker exists
 	if (userMarker) {
 		mymap.removeLayer(userMarker);
@@ -33,11 +34,13 @@ function getDistance() {
 function getDistanceFromPoint(position) {
 	// find the coordinates of a point using this website ((https://itouchmap.com/latlong.html))		// these are the coordinates for Apple Store CG
 	var lat = 51.512148
-	var lng = -0.123515
+	var lng = -0.13818
 
 	//return the distance in kilometres
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude,lat,lng,'K');
-	document.getElementById('showDistance').innerHTML = "Distance: " + distance;
+	if (distance <= 0.1) {
+		alert('You are within 100m from UCL.');
+	}
 }
 
 // code adopted from  https://www.htmlgoodies.com/beyond/javascript/calculate-the-distance-between-two-points-in-your-web-apps.html
