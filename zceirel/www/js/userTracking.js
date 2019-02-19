@@ -11,7 +11,6 @@ function trackLocation() {
 var userMarker;
 // code to feed location onto map
 function showPosition(position) {
-	getDistance();
 	// check if marker exists
 	if (userMarker) {
 		mymap.removeLayer(userMarker);
@@ -21,6 +20,7 @@ function showPosition(position) {
 	.bindPopup("<b>You were here</b>");
 
 	mymap.setView([position.coords.latitude, position.coords.longitude], 5);
+	getDistance();
 
 	}
 
