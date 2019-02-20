@@ -12,7 +12,7 @@ function addPointLinePoly() {
 	//add a circle
 	L.circle([51.52427,-0.13390],5000, {
 		color:'red',
-		fillColor:'#f05',
+		fillColor:'#f03',
 		fillOpacity: 0.4
 		}).addTo(mymap);
 
@@ -23,8 +23,8 @@ function addPointLinePoly() {
 		[51.52376,-0.143907]
 		],{
 
-		color:'orange',
-		fillColor:'#f08',
+		color:'red',
+		fillColor:'#f03',
 		fillOpacity: '0.8'
 
 		}).addTo(mymap);
