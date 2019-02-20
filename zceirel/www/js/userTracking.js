@@ -33,13 +33,15 @@ function getDistance() {
 
 function getDistanceFromPoint(position) {
 	// find the coordinates of a point using this website ((https://itouchmap.com/latlong.html))		// these are the coordinates for Apple Store CG
-	var lat = 51.512148
-	var lng = -0.13818
+	var lat = 51.52453064;
+	var lng = -0.1324669;
 
 	//return the distance in kilometres
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude,lat,lng,'K');
-	if (distance <= 0.1) {
-		alert('You are within 100m from UCL.');
+	
+	// alert user if distance is within 100m from above point
+	if (Number(distance) <= 0.100) {
+		alert("You are within 100m from UCL.");
 	}
 }
 
@@ -67,5 +69,5 @@ function calculateDistance(lat1, lon1,lat2,lon2,unit) {
 // every time the user location is changed/ tracked, check the distance of the user from each
 // Earthquake in the data and pop up an alert.
 function getDistanceFromMultiplePoints(position) {
-	
+
 }
