@@ -7,10 +7,10 @@ var mymap;
 
 function addPointLinePoly() {
 	//add a point
-	L.marker([51.52584,-0.13493]).addTo(mymap);
+	L.marker([50.93,-6.29]).addTo(mymap);
 
 	//add a circle
-	L.circle([51.5242,-0.1339],5000, {
+	L.circle([51.5,-0.09],50000, {
 		color:'red',
 		fillColor:'#f03',
 		fillOpacity: 0.5
@@ -19,14 +19,13 @@ function addPointLinePoly() {
 
 	//add a polygon with 2 end points (i.e. a line)
 	var myLine = L.polygon([
-		[51.5244,-0.13811],
-		[51.5237,-0.14390]
-
+		[55.7,-21.81],
+		[58.51,13.32]
 		],{
 
 		color:'red',
-		fillColor:'#f03',
-		fillOpacity: '0.8'
+		fillColor:'#f06',
+		fillOpacity: '0.5'
 
 		}).addTo(mymap);
 
