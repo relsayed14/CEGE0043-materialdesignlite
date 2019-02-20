@@ -85,5 +85,5 @@ function getDistanceFromMultiplePoints(position) {
 			closestQuake = obj.properties.place;
 		}
 	}
-	alert("Earthquake: " + closestQuake + "is distance " + minDistance + "away");
+	alert("Earthquake: " + closestQuake + "is distance " + minDistance + " away");
 }
