@@ -28,7 +28,7 @@ function showPosition(position) {
 function getDistance() {
 	alert('getting distance');
 	// getDistanceFromPoint is the function called once distance has been found
-	navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints)
+	navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePointsg)
 }
 
 function getDistanceFromPoint(position) {
@@ -79,8 +79,8 @@ function getDistanceFromMultiplePoints(position) {
 	// Each time distance is compared to large min distance
 	//if smaller, it becomes the new min distance
 		var obj = earthquakes.features[i];
-		var distance = calculateDistance(position.coords.latitude, position.coords.longitude, obj.gemetry.coordinates[0], obj.coordinates[1], 'K');
-		if (distance <minDistance) {
+		var distance = calculateDistance(position.coords.latitude,position.coords.longitude,obj.geometry.coordinates[0], obj.geometry.coordinates[1], 'K');
+		if (distance < minDistance) {
 			minDistance = distance;
 			closestQuake = obj.properties.place;
 		}
