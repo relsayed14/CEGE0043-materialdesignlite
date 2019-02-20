@@ -1,6 +1,7 @@
 
 // code to get the Earthquakes data using an XMLHttpRequest
 var client;
+var earthquakes;
 var mymap;
 
 
@@ -16,7 +17,7 @@ function addPointLinePoly() {
 		}).addTo(mymap);
 
 
-	//add a polygon with 3 end points (i.e. a triangle)
+	//add a polygon with 2 end points (i.e. a line)
 	var myLine = L.polygon([
 		[55.7,-21.81],
 		[58.51,13.32]
@@ -55,6 +56,7 @@ function earthquakeResponse() {
 function loadGeoJSONLayer(earthquakedata) {
     // convert the text to JSON
     var earthquakejson = JSON.parse(earthquakedata);
+    earthquakes = earthquakejson;
 
     // add the JSON layer onto the map - it will appear using the default icons
     geojsonLayer = L.geoJson(earthquakejson).addTo(mymap);
