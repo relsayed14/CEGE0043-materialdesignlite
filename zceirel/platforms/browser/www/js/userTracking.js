@@ -28,7 +28,7 @@ function showPosition(position) {
 function getDistance() {
 	alert('getting distance');
 	// getDistanceFromPoint is the function called once distance has been found
-	navigator.geolocation.getCurrentPosition(getDistanceFromPoint)
+	navigator.geolocation.getCurrentPosition(getDistanceFromMultiplePoints)
 }
 
 function getDistanceFromPoint(position) {
@@ -40,7 +40,7 @@ function getDistanceFromPoint(position) {
 	var distance = calculateDistance(position.coords.latitude, position.coords.longitude,lat,lng,'K');
 	
 	// alert user if distance is within 100m from above point
-	if (Number(distance) <= 0.100) {
+	if (distance <= 0.100) {
 		alert("You are within 100m from UCL.");
 	}
 }
@@ -70,4 +70,20 @@ function calculateDistance(lat1, lon1,lat2,lon2,unit) {
 // Earthquake in the data and pop up an alert.
 function getDistanceFromMultiplePoints(position) {
 
+	//set a very large minimum distance
+	var minDistance = 100000000000;
+	var closestQuake = "";
+
+	// loop through all earthquakes, and measure distance to each
+	for (var i=0; i<earthquakes.features.length;i++) {
+	// Each time distance is compared to large min distance
+	//if smaller, it becomes the new min distance
+		var obj = earthquakes.features[i];
+		var distance = calculateDistance(position.coords.latitude, position.coords.longitude, obj.gemetry.coordinates[0], obj.coordinates[1], 'K');
+		if (distance <minDistance) {
+			minDistance = distance;
+			closestQuake = obj.properties.place;
+		}
+	}
+	alert("Earthquake: " + closestQuake + "is distance " + minDistance + "away");
 }
