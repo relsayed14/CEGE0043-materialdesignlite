@@ -62,3 +62,10 @@ function calculateDistance(lat1, lon1,lat2,lon2,unit) {
 	return dist;
 
 }
+
+
+// every time the user location is changed/ tracked, check the distance of the user from each
+// Earthquake in the data and pop up an alert.
+function getDistanceFromMultiplePoints(position) {
+	
+}

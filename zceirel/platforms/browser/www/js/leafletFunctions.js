@@ -1,6 +1,7 @@
 
 // code to get the Earthquakes data using an XMLHttpRequest
 var client;
+var earthquakes;
 var mymap;
 
 
@@ -55,6 +56,7 @@ function earthquakeResponse() {
 function loadGeoJSONLayer(earthquakedata) {
     // convert the text to JSON
     var earthquakejson = JSON.parse(earthquakedata);
+    earthquakes = earthquakejson;
 
     // add the JSON layer onto the map - it will appear using the default icons
     geojsonLayer = L.geoJson(earthquakejson).addTo(mymap);
