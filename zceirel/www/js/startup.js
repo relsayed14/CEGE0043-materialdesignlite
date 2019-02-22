@@ -1,3 +1,5 @@
+getPort();
+
 function trackAndCircle() {
 
 	trackLocation();
